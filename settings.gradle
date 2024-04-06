@@ -1,10 +1,13 @@
 pluginManagement {
 	repositories {
 		mavenCentral()
+		maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
 		gradlePluginPortal()
 		if (version.endsWith('-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
+		maven { url 'https://repo.spring.io/plugins-release' }
+		maven { url "https://repo.spring.io/release" }
 	}
 	resolutionStrategy {
 		eachPlugin {
@@ -19,7 +22,7 @@ pluginManagement {
 }
 
 plugins {
-	id "com.gradle.enterprise" version "3.12.5"
+	id "com.gradle.enterprise" version "3.13.4"
 	id "io.spring.ge.conventions" version "0.0.13"
 }
 
